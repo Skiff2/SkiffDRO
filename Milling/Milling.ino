@@ -1,6 +1,6 @@
-﻿long ValX = 0;
-long ValY = 0;
-long ValZ = 0;
+long ValX = 500000;
+long ValY = 500000;
+long ValZ = 500000;
 bool  IsAx = false;
 bool  IsBx = false;
 bool  IsAy = false;
@@ -33,11 +33,11 @@ Serial1.begin(9600); //А в идеале, настроить BT модуль н
 
 void loop() {
   delay(200);
-  Serial1.print(ValX);
+  Serial1.print(ValX-500000);
   Serial1.print("*");
-  Serial1.print(ValY);
+  Serial1.print(ValY-500000);
   Serial1.print("*");
-  Serial1.println(ValZ);
+  Serial1.println(ValZ-500000);
 }
 
 void intAx() { IsAx = !IsAx;  if ((IsAx && !IsBx) || (!IsAx && IsBx)) ValX++; else ValX--; }
